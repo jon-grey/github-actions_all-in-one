@@ -1,13 +1,29 @@
 
 # Deployment steps
 
+> Note: terraform for azure will not work before doing `make setup-deployments; make submit-deployments` or simply `make all`. As such github actions will fail as they need secrets!
+
 ## Setup deployments
 
 In here we create Azure RBAC, install terraform locally, setup resources in Azure for Terraform. 
 
 ```sh
-make
+make setup-deployments
 ```
+
+## Submit Deployments
+
+In here we update dynamic variables for terraform via bash (edit deployments-submit/02.make.terraform.tfvars.sh accordingly), test our terraform deployment locally, and push changes of repo to github.
+
+```sh
+make submit-deployments
+```
+
+In github 
+
+
+# Issues
+
 
 ## Manually unlock terraform.tfstate blob in azure
 
@@ -19,9 +35,6 @@ if  $isLocked; then
 fi      
 ```
 
-
-
-# Issues
 
 ## terraform plan hangs in github actions
 

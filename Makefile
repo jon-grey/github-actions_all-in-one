@@ -8,3 +8,4 @@ submit-deployments:
 	cd deployments-submit; \
 	bash 00.main.sh
 
+all: setup-deployments submit-deployments
