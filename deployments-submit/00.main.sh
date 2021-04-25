@@ -14,6 +14,7 @@ fi
 
 export BLOB_NUMBER=$(cat $LOCAL_BLOB_FILE)
 
+export AZURE_STORAGE_BLOB_TFSTATE_LOCAL=az-terraform-state-${BLOB_NUMBER}
 
 echo "
 ###########################################################################

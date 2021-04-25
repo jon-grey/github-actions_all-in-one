@@ -13,9 +13,9 @@ echo "Create storage container for terraform state"
 
 az storage container exists \
     --account-name ${AZURE_STORAGE_ACCOUNT_OPS} \
-    --name ${AZURE_STORAGE_BLOB_TFSTATE} -o tsv \
+    --name ${AZURE_STORAGE_BLOB_TFSTATE_LOCAL} -o tsv \
 | grep -qi true \
 || az storage container create \
-    -n ${AZURE_STORAGE_BLOB_TFSTATE} \
+    -n ${AZURE_STORAGE_BLOB_TFSTATE_LOCAL} \
     --account-name ${AZURE_STORAGE_ACCOUNT_OPS}
 

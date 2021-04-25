@@ -29,7 +29,7 @@ TFVARS="../deployments/terraform.tfvars"
 
 echo "
 az_location                 = ${DQT}${AZURE_LOCATION}${DQT}
-az_storage_tfstate          = ${DQT}${AZURE_STORAGE_BLOB_TFSTATE}-${BLOB_NUMBER}${DQT}
+az_storage_tfstate          = ${DQT}${AZURE_STORAGE_BLOB_TFSTATE_LOCAL}${DQT}
 az_storage_account_ops      = ${DQT}${AZURE_STORAGE_ACCOUNT_OPS}${DQT}
 az_storage_account_devs     = ${DQT}${AZURE_STORAGE_ACCOUNT_DEVS}${DQT}
 az_resource_group_name_devs = ${DQT}${AZURE_RESOURCE_GROUP_DEVS}${DQT}
@@ -49,7 +49,7 @@ terraform {
   backend ${DQT}azurerm${DQT} {
     resource_group_name  = ${DQT}${AZURE_RESOURCE_GROUP_OPS}${DQT}
     storage_account_name = ${DQT}${AZURE_STORAGE_ACCOUNT_OPS}${DQT}
-    container_name       = ${DQT}${AZURE_STORAGE_BLOB_TFSTATE}-${BLOB_NUMBER}${DQT}
+    container_name       = ${DQT}${AZURE_STORAGE_BLOB_TFSTATE_LOCAL}${DQT}
     key                  = ${DQT}terraform.tfstate${DQT}
   }
 }
@@ -64,7 +64,7 @@ echo "
 for fp in ../.github/workflows/*.yml; do
 
 sed \
-  -i "s/AZURE_STORAGE_BLOB_TFSTATE:\s.*/AZURE_STORAGE_BLOB_TFSTATE: ${AZURE_STORAGE_BLOB_TFSTATE}-${BLOB_NUMBER}/" \
+  -i "s/AZURE_STORAGE_BLOB_TFSTATE:\s.*/AZURE_STORAGE_BLOB_TFSTATE: ${AZURE_STORAGE_BLOB_TFSTATE_LOCAL}/" \
   $fp
 
 sed \
