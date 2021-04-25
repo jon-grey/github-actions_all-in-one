@@ -1,28 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-DQT='"'
-
-function random () 
-{ 
-    date "+%H%M%S"
-}
-
-function rdict {
-	python3 -c "print($1[${DQT}$2${DQT}])"
-}
-
-export RBAC_JSON="$HOME/rbac.json"
-export RBAC_SDK_JSON="$HOME/rbac-sdk.json"
-
 echo "
 ###########################################################################
 #### Create service principal used in terraform and save to $RBAC_JSON
 ###########################################################################"
-
-
-
-. ../exports-private.sh
 
 # uncomment at first run
 # az login 
