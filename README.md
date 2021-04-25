@@ -24,6 +24,11 @@ In github
 
 # Issues
 
+## Parallel access to same azure blob 
+
+Each github workflow using storage blob should have its own blob as they try to lock the same blob
+
+![](images/README/2021-04-25-20-27-46.png)
 
 ## Manually unlock terraform.tfstate blob in azure
 
@@ -55,7 +60,7 @@ and in azure portal we see
 or in az cli we can do
 
 ```sh
-az storage blob show --name "terraform.tfstate" --container-name ${AZURE_STORAGE_BLOB_TFSTATE} --account-name ${AZURE_STORAGE_ACCOUNT_OPS}  
+az storage blob show --name "terraform.tfstate" --container-name ${AZURE_STORAGE_TFSTATE} --account-name ${AZURE_STORAGE_ACCOUNT_OPS}  
 ```
 
 to see 
@@ -65,5 +70,5 @@ to see
 Then we can break lease of blob in azure
 
 ```sh
-az storage blob show --name "terraform.tfstate" --container-name ${AZURE_STORAGE_BLOB_TFSTATE} --account-name ${AZURE_STORAGE_ACCOUNT_OPS}
+az storage blob show --name "terraform.tfstate" --container-name ${AZURE_STORAGE_TFSTATE} --account-name ${AZURE_STORAGE_ACCOUNT_OPS}
 ```
