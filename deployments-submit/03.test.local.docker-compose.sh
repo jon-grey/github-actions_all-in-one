@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-dqt='"'
+DQT='"'
 
 export TF_WARN_OUTPUT_ERRORS=1
 

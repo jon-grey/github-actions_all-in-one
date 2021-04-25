@@ -1,10 +1,32 @@
+export DQT='"'
+
+function random () 
+{ 
+    date "+%H%M%S"
+}
+
+function rdict ()
+{
+	python3 -c "print($1[${DQT}$2${DQT}])"
+}
+
+mkdir -p .files
+
+BLOB_FILE=".files/storage-blob-random-suffix"
+
+if ! test -f "$BLOB_FILE"; then 
+    echo $(random) > $BLOB_FILE
+fi
+
+BLOB_NUMBER=$(cat $BLOB_FILE)
+
 export AZURE_SUBSCRIPTION_ID=""
-export AZURE_RESOURCE_GROUP=aks-resource-group-demo
-export AZURE_CONTAINER_REGISTRY=containerregistry003
-export AZURE_AKS_CLUSTER=aks-cluster-demo-000
-export AZURE_AKS_DNS_PREFIX=aks-dns-demo-000
-export AZURE_SERVICE_PRINCIPAL=azure-cli-2021-03-21-19-00-00
-export AZURE_LOCATION=""
-export CUSTOM_DOMAIN=""
-export LETSENCRYPT_EMAIL="@"
-export AZURE_ASK_NODES_ADMIN=""
+export AZURE_RESOURCE_GROUP_DEVS=resource-group-demo-devs
+export AZURE_RESOURCE_GROUP_OPS=resource-group-demo-ops
+export AZURE_STORAGE_ACCOUNT_OPS=storageops${BLOB_NUMBER}
+export AZURE_STORAGE_ACCOUNT_DEVS=storagedevs${BLOB_NUMBER}
+export AZURE_STORAGE_BLOB_TFSTATE=az-terraform-state-${BLOB_NUMBER}
+export AZURE_SERVICE_PRINCIPAL=azure-cli-....-00-00
+export AZURE_SERVICE_PRINCIPAL_SDK=azure-cli-sdk-...-00-00
+export AZURE_LOCATION="eastus"
+

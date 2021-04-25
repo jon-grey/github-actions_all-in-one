@@ -55,7 +55,7 @@ and in azure portal we see
 or in az cli we can do
 
 ```sh
-az storage blob show --name "terraform.tfstate" --container-name ${AZURE_STORAGE_TFSTATE} --account-name ${AZURE_STORAGE_ACCOUNT_OPS}  
+az storage blob show --name "terraform.tfstate" --container-name ${AZURE_STORAGE_BLOB_TFSTATE} --account-name ${AZURE_STORAGE_ACCOUNT_OPS}  
 ```
 
 to see 
@@ -65,5 +65,5 @@ to see
 Then we can break lease of blob in azure
 
 ```sh
-az storage blob show --name "terraform.tfstate" --container-name ${AZURE_STORAGE_TFSTATE} --account-name ${AZURE_STORAGE_ACCOUNT_OPS}
+az storage blob show --name "terraform.tfstate" --container-name ${AZURE_STORAGE_BLOB_TFSTATE} --account-name ${AZURE_STORAGE_ACCOUNT_OPS}
 ```

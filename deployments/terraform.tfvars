@@ -1,9 +1,9 @@
 
 az_location                 = "eastus"
-az_storage_tfstate          = "az-terraform-state"
-az_storage_account_ops      = "storageops233836"
-az_storage_account_devs     = "storagedevs233836"
+az_storage_tfstate          = "az-terraform-state-195235"
+az_storage_account_ops      = "storageops195235"
+az_storage_account_devs     = "storagedevs195235"
 az_resource_group_name_devs = "resource-group-demo-devs"
 az_resource_group_name_ops  = "resource-group-demo-ops"
-date                        = "Sun Apr 25 19:26:58 CEST 2021"
+date                        = "Sun Apr 25 19:52:35 CEST 2021"
 

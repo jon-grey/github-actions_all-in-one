@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-dqt='"'
+DQT='"'
 
 function random () 
 { 
@@ -9,7 +9,7 @@ function random ()
 }
 
 function rdict {
-	python3 -c "print($1[${dqt}$2${dqt}])"
+	python3 -c "print($1[${DQT}$2${DQT}])"
 }
 
 export RBAC_JSON="$HOME/rbac.json"
