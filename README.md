@@ -1,4 +1,8 @@
 
+# TODO
+
+[x] - share one azure storage account with other github projects, but use different blobs
+
 # Deployment steps
 
 > Note: terraform for azure will not work before doing `make setup-deployments; make submit-deployments` or simply `make all`. As such github actions will fail as they need secrets!
