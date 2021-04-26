@@ -1,8 +1,8 @@
 
 # TODO
 
-[x] - share one azure storage account with other github projects, but use different blobs
-[ ] - add demo with packer
+- [x] - share one azure storage account with other github projects, but use different blobs
+- [ ] - add demo with packer
 
 # Deployment steps
 
