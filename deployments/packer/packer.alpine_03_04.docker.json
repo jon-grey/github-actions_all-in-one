@@ -1,0 +1,39 @@
+{
+  "builders": [
+    {
+        "type": "docker",
+        "image": "alpine:latest",
+        "commit": "true",
+        "pull": "true",
+        "changes": [
+          "ENTRYPOINT [\"nginx -g 'daemon off;'\"]"
+        ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "apk update",
+        "apk add --update py-pip ansible",
+        "rm -rf /tmp/* && rm -rf /var/cache/apk/*"
+      ]
+    },
+    {
+      "type": "ansible-local",
+      "playbook_file": "./playbooks/nginx.yml"
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "apk del ansible",
+        "rm -rf /var/cache/apk/**/"
+      ]
+    }
+  ],
+  "post-processors": [[ {
+    "type": "docker-tag",
+    "repository": "redis-packer",
+    "tag": "latest"
+} ]]
+}

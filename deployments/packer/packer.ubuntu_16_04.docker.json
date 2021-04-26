@@ -1,0 +1,23 @@
+{
+  "builders": [
+    {
+        "type": "docker",
+        "image": "ubuntu:16.04",
+        "commit": "true",
+        "pull": "true",
+        "changes": [
+            "ENTRYPOINT [\"nginx -g 'daemon off;'\"]"
+        ]
+    }
+  ],
+  "provisioners": [
+    {
+        "type": "shell",
+        "script": "ansible-install.sh"
+    },
+    {
+        "type": "ansible-local",
+        "playbook_file": "common.yml"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+---
+    - hosts: localhost
+      tasks:
+      - name: install nginx
+        apk:
+          name: nginx
+          state: latest

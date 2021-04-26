@@ -1,6 +1,6 @@
 
 variable "az_location" {
-  description = "Azure resources location"
+  description = "The location where resources are created"
   default     = "Germany West Central"
 }
 variable "az_resource_group_name_devs" {
@@ -16,4 +16,14 @@ variable "az_storage_account_devs" {
 variable "az_storage_account_ops" {
 }
 variable "az_storage_tfstate" {
+}
+
+variable "application_port" {
+    description = "The port that you want to expose to the external load balancer"
+    default     = 80
+}
+
+variable "admin_password" {
+    description = "Default password for admin"
+    default = "Passwwoord11223344"
 }

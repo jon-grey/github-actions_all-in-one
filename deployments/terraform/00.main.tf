@@ -26,10 +26,10 @@ provider "azurerm" {
 # }
 
 #######################################################################################
-#### STAGE A 1.0 - Create ARG for Devs
+#### STAGE A 0.0 - Create ARG for Devs
 #######################################################################################
 
-resource "azurerm_resource_group" "vms" {
+resource "azurerm_resource_group" "devs_vmss" {
   name     = var.az_resource_group_name_devs
   location = var.az_location
 
@@ -38,3 +38,13 @@ resource "azurerm_resource_group" "vms" {
   }
 }
 
+
+
+data "azurerm_resource_group" "ops" {
+  name     = var.az_resource_group_name_ops
+  location = var.az_location
+
+  tags = {
+    environment = "Ops"
+  }
+}
