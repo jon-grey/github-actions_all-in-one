@@ -1,0 +1,54 @@
+{
+  "builders": [
+    {
+      "type": "azure-arm",
+
+      "client_id": "b27f8017-bd11-4167-aa98-aa8d86be3f80",
+      "client_secret": "EmgU-NFVL80XVcp6fklyK8fD.IIoSJ.rKb",
+      "tenant_id": "4e0bfea1-1425-4dbd-9173-7f9db28c3ded",
+      "subscription_id": "53cda94b-af20-45ab-82c0-04e260445517",
+
+      "managed_image_resource_group_name": "resource-group-demo-ops",
+      "managed_image_name": "myPackerImage",
+
+      "os_type": "Linux",
+      "image_publisher": "Canonical",
+      "image_offer": "UbuntuServer",
+      "image_sku": "16.04-LTS",
+
+      "azure_tags": {
+        "dept": "Engineering",
+        "task": "Builds an Ubuntu 16.04 LTS image."
+      },
+
+      "location": "East US",
+      "vm_size": "Standard_DS2_v2"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "apk update",
+        "apk add --update py-pip ansible",
+        "rm -rf /tmp/* && rm -rf /var/cache/apk/*"
+      ]
+    },
+    {
+      "type": "ansible-local",
+      "playbook_file": "./playbooks/nginx.yml"
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "apk del ansible",
+        "rm -rf /var/cache/apk/**/"
+      ]
+    }
+  ],
+  "post-processors": [[ {
+    "type": "docker-tag",
+    "repository": "redis-packer",
+    "tag": "latest"
+} ]]
+}

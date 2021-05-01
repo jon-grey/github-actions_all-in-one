@@ -2,7 +2,24 @@
 # TODO
 
 - [x] - share one azure storage account with other github projects, but use different blobs
-- [ ] - add demo with packer
+- [ ] - add demo with packer: 
+  - [Creating a minimal OS for containers with LinuxKit and Azure](https://stevenfollis.com/2020/04/17/creating-a-minimal-os-for-containers-with-linuxkit-and-azure/) 
+  - [linuxkit/linuxkit](https://github.com/linuxkit/linuxkit/blob/master/docs/platform-azure.md) 
+  - [Azure/WALinuxAgent](https://github.com/Azure/WALinuxAgent) 
+  - [[BUG] NameError: name `distro` is not defined on Alpine 3.11 · Issue #1753 · Azure/WALinuxAgent](https://github.com/Azure/WALinuxAgent/issues/1753#issuecomment-577371445) 
+  - [Docker Hub](https://hub.docker.com/r/nathanleclaire/walinuxagent/dockerfile) 
+  - [Packer &#43; Ansible - Dockerfile = AwesomeContainer](https://alex.dzyoba.com/blog/packer-for-docker/) 
+  - [Azure chroot - Builders | Packer by HashiCorp](https://www.packer.io/docs/builders/azure/chroot)
+  - [artis3n/cloud-hackbox](https://github.com/artis3n/cloud-hackbox/tree/c6a1f95db038d427f14054258257fa448eff0546)
+  - [True CI/CD Pipeline for &quot;Golden Image&quot; AMIs](https://dev.to/artis3n/true-ci-cd-pipeline-for-golden-image-amis-4p39)
+  - [cisagov/skeleton-packer](https://github.com/cisagov/skeleton-packer)
+  - [Building Docker image with Packer and provisioning with Ansible](https://gist.github.com/maxivak/2d014f591fc8b7c39d484ac8d17f2a55)
+  - [Automated image builds with Jenkins, Packer, and Kubernetes](https://cloud.google.com/architecture/automated-build-images-with-jenkins-kubernetes)
+  - [How are docker and packer different? And which one should I prefer when provisioning images?](https://stackoverflow.com/questions/47169353/how-are-docker-and-packer-different-and-which-one-should-i-prefer-when-provisio)
+- [ ] - docker-compose on azure VMs 
+    - [Huachao/azure-content](https://github.com/Huachao/azure-content/blob/master/articles/virtual-machines/virtual-machines-docker-compose-quickstart.md#get-started-with-docker-and-compose-to-define-and-run-a-multi-container-application-on-an-azure-virtual-machine)
+    - [Use Docker Compose to deploy multiple containers - Azure Cognitive Services](https://docs.microsoft.com/en-us/azure/cognitive-services/containers/docker-compose-recipe)
+    - [How do I deploy my docker-compose project using Terraform?](https://stackoverflow.com/questions/47983827/how-do-i-deploy-my-docker-compose-project-using-terraform)
 
 # Deployment steps
 

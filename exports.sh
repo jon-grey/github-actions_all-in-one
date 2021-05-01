@@ -9,7 +9,7 @@ export STORAGE_ACC_SUFFIX_FILE="$HOME_AZ_DIR/storage-acc-random-suffix"
 
 function random () 
 { 
-    date "+%H%M%S"
+    date "+%N"
 }
 
 function rdict ()
